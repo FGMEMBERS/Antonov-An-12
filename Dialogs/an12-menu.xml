@@ -13,8 +13,14 @@
           <script>aircraft.livery.dialog.toggle()</script>
         </binding>
       </item>
+      <item>
+        <label>Choke brake</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/chokes/activ</property>
+        </binding>
+      </item>
     </menu>
   </default>
 
 </PropertyList>
-
