@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- ###################################################################################
+     Herbert Wagner November2014-March2015
+     ###################################################################################
+
+
+     Panel and Interior redesign from "firefly" Dec/Jan 2014
+     Fotos from https://www.flickr.com/photos/raf_yyc/ added for visualisation of work to do, all rights belong to raf_yyc
+
+     Source : http://i41.photobucket.com/albums/e290/sovietjet/IMG_1739.jpg 
+     this is not a AN-12, but for a start not bad
+     
+     Upadted BARANGER Emmanuel 2015
+-->
+<PropertyList>
+  
+  
+  <path>rearpanel.ac</path>
+  
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>rearpanel</object-name>
+    
+    <!-- Objets transparents -->
+  </animation>  
+
+  <!-- IAS/groundspeed indicator USVP -->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Interior/Panel/Instruments/usvp/usvp.xml</path>
+    <offsets>
+      <x-m> 0.004 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.034 </z-m>
+    </offsets>
+  </model>  
+  
+  <!-- Air- and Groundspeed Indicator in km/h -->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Interior/Panel/Instruments/speed_ind/speed_ind.xml</path>
+    <offsets>
+      <x-m> 0.006 </x-m>
+      <y-m> 0.088 </y-m>
+      <z-m> 0.028 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- UVO, Altimeter Electric -->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Interior/Panel/Instruments/uvo/uvo.xml</path>
+    <offsets>
+      <x-m>  0.005 </x-m>
+      <y-m>  0.127 </y-m>
+      <z-m> -0.053 </z-m>
+    </offsets>
+  </model>
+  
+  <!--Variometer, For Cabine and Outside pressure control--> 
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Interior/Panel/Instruments/uvpd/uvpd.xml</path>
+    <offsets>
+      <x-m>  0.00418 </x-m>
+      <y-m> -0.08500 </y-m>
+      <z-m>  0.03190 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- rear panel, tail view position -->
+  <!-- TNV-15, OUtside Temperatur Indicator -->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Interior/Panel/Instruments/tnv-15/tnv-15.xml</path>
+    <offsets>
+      <x-m>  0.004 </x-m>
+      <y-m> -0.142 </y-m>
+      <z-m> -0.035 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Paratroopers Switch-->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Interior/Panel/Instruments/switch/parachute_signal.xml</path>
+    <offsets>
+      <x-m>  0.005 </x-m>
+      <y-m> -0.141 </y-m>
+      <z-m>  0.036 </z-m>
+    </offsets>
+  </model>  
+  
+</PropertyList>

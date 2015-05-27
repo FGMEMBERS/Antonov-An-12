@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- #############################################################################
+     #    (C) 2006 by Yurik V. Nikiforoff - port for FGFS,  FDM,                 #
+     #    2d & 3d instruments, animations, systems and over.                     #
+     #    yurik@megasignal.com                                                   #
+     #############################################################################    
+     Heading indicator USH 3D instrument for Tu-154
+-->
+<PropertyList>
+  
+  <path>ush.ac</path>
+  
+  <animation>  
+    <object-name>fond</object-name>
+    <object-name>knob</object-name>
+    <object-name>face</object-name>
+    <object-name>index</object-name>
+    <object-name>compass</object-name>
+    <object-name>needle1</object-name>
+    <object-name>needle2</object-name>  
+    <object-name>mk</object-name>  
+    <object-name>gpk</object-name>  
+    <object-name>ak</object-name>  
+    
+    <object-name>vitre</object-name>  
+  </animation> 
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Antonov-An-12/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>index</object-name>
+    <object-name>base</object-name>
+    <object-name>compass</object-name>
+    <object-name>needle1</object-name>
+    <object-name>needle2</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>mk</object-name>  
+    <object-name>gpk</object-name>  
+    <object-name>ak</object-name>  
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>face</object-name>
+    <property>controls/switches/gauge-light</property>   
+    <factor> 180 </factor>  
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>  
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>face</object-name>
+    <visible>true</visible>       
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>Drift</tooltip-id>
+        <label>Wind Drift: %5.2f</label>
+        <property>/instrumentation/drift</property>      
+      </binding>
+    </hovered> 
+  </animation>
+  
+  <!--
+  <animation>
+    <type>rotate</type>
+    <object-name>face</object-name>
+    <property>/orientation/heading-deg</property>  
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>needle1</object-name>
+    <object-name>needle2</object-name>
+    <property>instrumentation/adf/indicated-bearing-deg</property>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  -->
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>needle1</object-name>
+    <object-name>needle2</object-name>
+    <property>/orientation/heading-deg</property>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>needle2</object-name>  
+    <property>/instrumentation/drift</property>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>  
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>mk</object-name>
+    <condition>
+      <equals>
+        <property>controls/switches/pu-11-gpk</property>
+        <value> 1 </value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>gpk</object-name>
+    <condition>
+      <equals>
+        <property>controls/switches/pu-11-gpk</property>
+        <value> 0 </value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>ak</object-name>
+    <condition>
+      <equals>
+        <property>controls/switches/pu-11-gpk</property>
+        <value> -1 </value>
+      </equals>
+    </condition>
+  </animation>
+  
+</PropertyList>

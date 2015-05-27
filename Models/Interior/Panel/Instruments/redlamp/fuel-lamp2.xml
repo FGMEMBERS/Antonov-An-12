@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- #############################################################################
+     #    (C) 2006 by Yurik V. Nikiforoff - port for FGFS,  FDM,                 #
+     #    2d & 3d instruments, animations, systems and over.                     #
+     #    yurik@megasignal.com                                                   #
+     #                                                                           #
+     #    Updated BARANGER Emmanuel 2015                                         #
+     #############################################################################
+     Green lamp 3D instrument for Tu-154
+-->
+<PropertyList>
+  
+  <path>fuel_lamp.ac</path>
+  
+  <animation>
+    <object-name>base</object-name>
+    <object-name>lampoff</object-name>
+    <object-name>lampoff1</object-name>
+    <object-name>lampoff2</object-name>
+    <object-name>lampoff3</object-name>
+    <object-name>lampoff4</object-name>
+    <object-name>lampon</object-name>
+    <object-name>lampon1</object-name>
+    <object-name>lampon2</object-name>
+    <object-name>lampon3</object-name>
+    <object-name>lampon4</object-name>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>lampoff</object-name>
+    <object-name>lampoff1</object-name>
+    <object-name>lampoff2</object-name>
+    <object-name>lampoff3</object-name>
+    <object-name>lampoff4</object-name>
+    <emission>           
+      <red>   0.235 </red>
+      <green> 0.235 </green>
+      <blue>  0.235 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>lampon</object-name>
+    <object-name>lampon1</object-name>
+    <object-name>lampon2</object-name>
+    <object-name>lampon3</object-name>
+    <object-name>lampon4</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampon</object-name>
+    <condition>
+      <or>
+        <property>consumables/fuel/tank[0]/selected</property>
+        <property>consumables/fuel/tank[1]/selected</property>
+        <property>consumables/fuel/tank[2]/selected</property>
+        <property>consumables/fuel/tank[3]/selected</property>
+      </or>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampon1</object-name>
+    <condition>
+      <property>consumables/fuel/tank[0]/selected</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampon2</object-name>
+    <condition>
+      <property>consumables/fuel/tank[1]/selected</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampon3</object-name>
+    <condition>
+      <property>consumables/fuel/tank[2]/selected</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampon4</object-name>
+    <condition>
+      <property>consumables/fuel/tank[3]/selected</property>
+    </condition>
+  </animation>
+  
+</PropertyList>

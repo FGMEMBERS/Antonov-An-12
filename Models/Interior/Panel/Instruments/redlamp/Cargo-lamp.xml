@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- #############################################################################
+     #    (C) 2006 by Yurik V. Nikiforoff - port for FGFS,  FDM,                 #
+     #    2d & 3d instruments, animations, systems and over.                     #
+     #    yurik@megasignal.com                                                   #
+     #                                                                           #
+     #    Updated BARANGER Emmanuel 2015                                         #
+     #############################################################################   
+     Green lamp 3D instrument for Tu-154
+-->
+<PropertyList>
+  
+  <path>Cargo-lamp.ac</path>
+  
+  <animation>
+    <object-name>base</object-name>
+    <object-name>lampGoff</object-name>
+    <object-name>lampOoff</object-name>
+    <object-name>lampRoff</object-name>
+    <object-name>lampGon</object-name>
+    <object-name>lampOon</object-name>
+    <object-name>lampRon</object-name>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>lampGoff</object-name>
+    <object-name>lampOoff</object-name>
+    <object-name>lampRoff</object-name>
+    <emission>           
+      <red>   0.235 </red>
+      <green> 0.235 </green>
+      <blue>  0.235 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>lampGon</object-name>
+    <object-name>lampOon</object-name>
+    <object-name>lampRon</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampGon</object-name>
+    <condition>
+      <equals>
+        <property>sim/multiplay/generic/float[1]</property>
+        <value> 1 </value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampOon</object-name>
+    <condition>    
+      <and>     
+        <not>
+          <equals>
+            <property>sim/multiplay/generic/float[1]</property>
+            <value> 1 </value>
+          </equals>
+        </not>      
+        <not>
+          <equals>
+            <property>sim/multiplay/generic/float[1]</property>
+            <value> 0 </value>
+          </equals>
+        </not>     
+      </and>
+    </condition>    
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampRon</object-name>
+    <condition>
+      <equals>
+        <property>sim/multiplay/generic/float[1]</property>
+        <value> 0 </value>
+      </equals>  
+    </condition>
+  </animation>
+  
+</PropertyList>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- #############################################################################
+     #    (C) 2006 by Yurik V. Nikiforoff - port for FGFS,  FDM,                 #
+     #    2d & 3d instruments, animations, systems and over.                     #
+     #    yurik@megasignal.com                                                   #
+     #                                                                           #
+     #    Updated BARANGER Emmanuel 2015                                         #
+     #############################################################################
+     Red lamp 3D instrument for Tu-154
+-->
+<PropertyList>
+  
+  <path>lamp-engines.ac</path>
+  
+  <animation>
+    <object-name>base</object-name>
+    <object-name>lampGoff1</object-name>
+    <object-name>lampGoff2</object-name>
+    <object-name>lampGoff3</object-name>
+    <object-name>lampGoff4</object-name>
+    <object-name>lampRoff1</object-name>
+    <object-name>lampRoff2</object-name>
+    <object-name>lampRoff3</object-name>
+    <object-name>lampRoff4</object-name>
+    <object-name>lampGon1</object-name>
+    <object-name>lampGon2</object-name>
+    <object-name>lampGon3</object-name>
+    <object-name>lampGon4</object-name>
+    <object-name>lampRon1</object-name>
+    <object-name>lampRon2</object-name>
+    <object-name>lampRon3</object-name>
+    <object-name>lampRon4</object-name>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>lampGoff1</object-name>
+    <object-name>lampGoff2</object-name>
+    <object-name>lampGoff3</object-name>
+    <object-name>lampGoff4</object-name>
+    <object-name>lampRoff1</object-name>
+    <object-name>lampRoff2</object-name>
+    <object-name>lampRoff3</object-name>
+    <object-name>lampRoff4</object-name>
+    <emission>           
+      <red>   0.235 </red>
+      <green> 0.235 </green>
+      <blue>  0.235 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>lampGon1</object-name>
+    <object-name>lampGon2</object-name>
+    <object-name>lampGon3</object-name>
+    <object-name>lampGon4</object-name>
+    <object-name>lampRon1</object-name>
+    <object-name>lampRon2</object-name>
+    <object-name>lampRon3</object-name>
+    <object-name>lampRon4</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
+  </animation>
+
+  <!-- Switch -->  
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Interior/Panel/Instruments/switch/engine0.xml</path>
+    <offsets>
+      <x-m>  0.01698 </x-m>
+      <y-m> -0.04500 </y-m>
+      <z-m> -0.00009 </z-m>
+    </offsets>
+  </model>  
+  
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Interior/Panel/Instruments/switch/engine1.xml</path>
+    <offsets>
+      <x-m>  0.01698 </x-m>
+      <y-m> -0.01500 </y-m>
+      <z-m> -0.00009 </z-m>
+    </offsets>
+  </model>  
+  
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Interior/Panel/Instruments/switch/engine2.xml</path>
+    <offsets>
+      <x-m>  0.01698 </x-m>
+      <y-m>  0.01500 </y-m>
+      <z-m> -0.00009 </z-m>
+    </offsets>
+  </model>  
+  
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Interior/Panel/Instruments/switch/engine3.xml</path>
+    <offsets>
+      <x-m>  0.01698 </x-m>
+      <y-m>  0.04500 </y-m>
+      <z-m> -0.00009 </z-m>
+    </offsets>
+  </model>  
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampGon1</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 860 </value>
+      </greater-than>    
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampRon1</object-name>
+    <condition>
+      <equals>
+        <property>/engines/engine[0]/running</property>    
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampGon2</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[1]/rpm</property>
+        <value> 860 </value>
+      </greater-than>    
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampRon2</object-name>
+    <condition>
+      <equals>
+        <property>/engines/engine[1]/running</property>    
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampGon3</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[2]/rpm</property>
+        <value> 860 </value>
+      </greater-than>    
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampRon3</object-name>
+    <condition>
+      <equals>
+        <property>/engines/engine[2]/running</property>    
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampGon4</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[3]/rpm</property>
+        <value> 860 </value>
+      </greater-than>    
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampRon4</object-name>
+    <condition>
+      <equals>
+        <property>/engines/engine[3]/running</property>    
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+  
+</PropertyList>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <path>fuel1.ac</path>
+  
+  <animation>  
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>n1</object-name>
+    <object-name>n2</object-name>   
+    <object-name>s1</object-name>
+    <object-name>s2</object-name>
+    
+    <object-name>vitre</object-name>
+  </animation>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Antonov-An-12/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <!-- working for Rembrandt -->
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>n1</object-name>
+    <object-name>n2</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+  
+  <!--sum of all tanks in kg, big needle -->
+  <animation>
+    <type>rotate</type>
+    <object-name>n1</object-name>
+    <property>consumables/fuel/total-fuel-kg</property>
+    <interpolation>
+      <entry><ind>     0 </ind><dep>   0 </dep></entry> 
+      <entry><ind> 25000 </ind><dep> 270 </dep></entry>
+      <entry><ind> 30000 </ind><dep> 274 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <!--percentage of fuel availible in all tanks, small needle -->
+  <animation>
+    <type>rotate</type>
+    <object-name>n2</object-name>
+    <property>consumables/fuel/total-fuel-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>   0 </dep></entry> 
+      <entry><ind> 0.7 </ind><dep> 270 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+</PropertyList>

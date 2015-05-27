@@ -7,7 +7,10 @@
   <animation>
     <!-- Objets opaques -->
     <object-name>interieur</object-name>
+    <object-name>interior_back_half</object-name>
+    <object-name>Rear_Cockpit</object-name>
     <object-name>inttour</object-name>
+    <object-name>intporte</object-name>
     <object-name>intportetour</object-name>
     <object-name>planchet</object-name>
     <object-name>intbaie</object-name>
@@ -19,26 +22,16 @@
     <object-name>intvitreporte</object-name>
   </animation>
 
-  <animation>
-    <type>noshadow</type>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Antonov-An-12/Models/Effects/Glass/glass</inherits-from>
     <object-name>intvitres</object-name>
     <object-name>intvitreporte</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>intvitres</object-name>
-    <object-name>intvitreporte</object-name>
-  </animation>
+  </effect>
   
   <!-- working for Rembrandt -->
   <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
     <object-name>intvitres</object-name>
     <object-name>intvitreporte</object-name>
   </effect>
@@ -47,9 +40,9 @@
   <model>
     <path>Aircraft/Antonov-An-12/Models/Pilot/pilot.xml</path>
     <offsets>
-      <x-m> -13.35934 </x-m>
-      <y-m>  -0.54728 </y-m>
-      <z-m>  -2.06901 </z-m>
+      <x-m> -13.28828 </x-m>
+      <y-m>  -0.68844 </y-m>
+      <z-m>  -2.09396 </z-m>
     </offsets>
   </model>
 
@@ -63,6 +56,40 @@
     </offsets>
   </model>
 
+  <!-- Ramp Control Panel (red box at ramp)-->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Interior/Panel/Instruments/ramppanel/ramppanel.xml</path>
+    <offsets>
+      <x-m>  4.09387 </x-m>
+      <y-m>  1.73000 </y-m>
+      <z-m> -2.36245 </z-m>
+      <heading-deg> -100 </heading-deg>
+    </offsets>
+  </model> 
+  
+  <!-- Planche de bord arrière -->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Interior/Panel/RearPanel/rearpanel.xml</path>
+    <offsets>
+      <x-m> 15.49965 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  0.94512 </z-m>
+      <pitch-deg>    15 </pitch-deg>
+      <heading-deg> 180 </heading-deg>
+    </offsets>
+  </model>
+  
+  <!--Parachuter/Cargo Signal Lamps -->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Interior/Panel/Instruments/redlamp/Cargo-lamp.xml</path>
+    <offsets>
+      <x-m> 11.29387 </x-m>
+      <y-m> -1.00000 </y-m>
+      <z-m> -1.16245 </z-m>
+      <heading-deg> 180 </heading-deg>
+    </offsets>
+  </model> 
+  
   <!-- Doors animations -->
   <animation>
     <name>IntLaPorteduCote</name>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <path>fuel1_R1.ac</path>
+  
+  <animation>  
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>fr1</object-name>
+    <object-name>fr2</object-name>   
+    <object-name>knob1</object-name>
+    <object-name>k1</object-name>
+    <object-name>knob2</object-name>
+    <object-name>knob3</object-name>
+    
+    <object-name>vitre</object-name>
+  </animation>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Antonov-An-12/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <!-- working for Rembrandt -->
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>fr1</object-name>
+    <object-name>fr2</object-name>
+    <object-name>k1</object-name>   
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+  
+  <!--sum of tank 3+4 content in kg, small needle -->
+  <animation>
+    <type>rotate</type>
+    <object-name>fr2</object-name>
+    <expression>
+      <table>
+        <sum>
+          <property>/consumables/fuel/tank[2]/level-kg</property>
+          <property>/consumables/fuel/tank[3]/level-kg</property>
+        </sum>
+        <entry><ind>     0 </ind><dep>   0 </dep></entry> 
+        <entry><ind> 21700 </ind><dep> 263 </dep></entry>
+      </table>
+    </expression>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <!--fuel flow in gallons per hour for tank 3+4, big needle --> 
+  <animation>
+    <type>rotate</type>
+    <object-name>fr1</object-name>
+    <expression>
+      <table>
+        <sum>
+          <property>engines/engine[2]/fuel-flow-gph</property>
+          <property>engines/engine[3]/fuel-flow-gph</property>
+        </sum>
+        <entry><ind>    0 </ind><dep>   0 </dep></entry> 
+        <entry><ind> 1600 </ind><dep> 265 </dep></entry>
+        <entry><ind> 3200 </ind><dep> 335 </dep></entry>
+      </table>
+    </expression>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type> 
+    <object-name>k1</object-name> 
+    <action>
+      <button>3</button> 
+      <repeatable>true/</repeatable> 
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>property-adjust</command> 
+        <property>instrumentation/R1_fuel/k34</property>
+        <step>100</step>
+        <min>0</min>
+        <max>25000</max> 
+      </binding>
+    </action>
+  </animation>  
+  
+  <animation>
+    <type>pick</type> 
+    <object-name>k1</object-name> 
+    <action>
+      <button>4</button> 
+      <repeatable>true/</repeatable> 
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>property-adjust</command> 
+        <property>instrumentation/R1_fuel/k34</property>
+        <step>-100</step>
+        <min>0</min>
+        <max>25000</max> 
+      </binding>
+    </action>
+  </animation>
+  
+</PropertyList>
