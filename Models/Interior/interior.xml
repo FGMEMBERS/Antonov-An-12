@@ -117,9 +117,9 @@
     <object-name>IntLaPorteduCote</object-name>
     <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
-      <entry><ind> 0.00 </ind><dep>  0.0 </dep></entry>
-      <entry><ind> 0.03 </ind><dep> -0.2 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> -0.2 </dep></entry>
+      <entry><ind> 0.00 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 0.03 </ind><dep> -0.28 </dep></entry>
+      <entry><ind> 1.00 </ind><dep> -0.28 </dep></entry>
     </interpolation>
     <axis>
       <x>  0 </x>
@@ -133,9 +133,9 @@
     <object-name>IntLaPorteduCote</object-name>
     <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
-      <entry><ind> 0.00 </ind><dep>   0 </dep></entry>
-      <entry><ind> 0.03 </ind><dep>   0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> 165 </dep></entry>
+      <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.2 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 165 </dep></entry>
     </interpolation>
     <center>
       <x-m> -5.15101 </x-m>
