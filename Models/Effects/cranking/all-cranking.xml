@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+ 
+  <!-- Engine 0 Left exterior -->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Effects/cranking/cranking1.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -9.568 </y-m>
+      <z-m> -1.300 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Engine 1 Left interior -->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Effects/cranking/cranking2.xml</path>
+    <offsets>
+      <x-m> -0.60000 </x-m>
+      <y-m> -4.63488 </y-m>
+      <z-m> -1.30000 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Engine 2 Right interior -->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Effects/cranking/cranking2.xml</path>
+    <offsets>
+      <x-m> -0.60000 </x-m>
+      <y-m>  4.63488 </y-m>
+      <z-m> -1.30000 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Engine 3 Right exterior -->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Effects/cranking/cranking3.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  9.568 </y-m>
+      <z-m> -1.300 </z-m>
+    </offsets>
+  </model>
+  
+</PropertyList>

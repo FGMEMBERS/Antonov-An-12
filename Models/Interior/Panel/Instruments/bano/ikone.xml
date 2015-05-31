@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- #############################################################################
+     #    (C) 2008 by Yurik V. Nikiforoff - port for FGFS,  FDM,                 #
+     #    2d & 3d instruments, animations, systems and over.                     #
+     #    yurik@megasignal.com                                                   #
+     #                                                                           #
+     #    Updated BARANGER Emmanuel 2015                                         #
+     #############################################################################   
+Light switches block -AN-12 3D instrument for Tu-154
+-->
+<PropertyList>
+  
+  <path>ikone.ac</path>
+  
+  <animation>
+    <object-name>base</object-name>  
+  </animation>
+  
+  <!--External panel lighting-->
+  <animation>
+    <type>material</type>  
+    <object-name>base</object-name>  
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <offset>0.1</offset>
+      <red>   0.11 </red>
+      <green> 0.11 </green>
+      <blue>  0.11 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>    
+    <condition>
+      <property>sim/initialized</property>
+    </condition>
+  </animation>
+  
+</PropertyList>

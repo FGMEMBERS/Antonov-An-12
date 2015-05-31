@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- #############################################################################
+     #    (C) 2007 by Yurik V. Nikiforoff - port for FGFS,  FDM,                 #
+     #    2d & 3d instruments, animations, systems and over.                     #
+     #    yurik@megasignal.com                                                   #
+     #                                                                           #
+     #    Updated BARANGER Emmanuel 2015                                         #
+     #############################################################################
+     IAS/groundspeed indicator USVP 3D instrument for Tu-154
+-->
+<PropertyList>
+  
+  <path>usvp.ac</path>
+  
+  <animation>
+    <object-name>bezel</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <object-name>vozd</object-name>
+    <object-name>put</object-name>
+    <object-name>top</object-name>
+    
+    <object-name>hs</object-name>
+    <object-name>vitre</object-name>
+  </animation>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Antonov-An-12/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <object-name>vozd</object-name>
+    <object-name>put</object-name>
+    <object-name>top</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>               
+    <property>instrumentation/usvp/air_ground_speed_kt</property>    
+    <factor> 0.3950208 </factor>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>top</object-name>
+    <property>controls/switches/usvp-selector-trans</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m>  0.00000 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04806 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>hs</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var sel = getprop("controls/switches/usvp-selector") or 0;
+          sel = 1 - sel;
+          setprop("controls/switches/usvp-selector", sel);
+          interpolate("controls/switches/usvp-selector-trans", sel, 0.15);
+        </script>
+      </binding>
+    </action>
+  </animation>
+  
+</PropertyList>

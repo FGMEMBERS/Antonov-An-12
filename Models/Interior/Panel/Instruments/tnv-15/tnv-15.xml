@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- #############################################################################
+     #    (C) 2006 by Yurik V. Nikiforoff - port for FGFS,  FDM,                 #
+     #  2d & 3d instruments, animations, systems and over.                       #
+     #      yurik@megasignal.com                                                 #
+     #############################################################################
+     TNV-15 termometer 3D instrument for Tu-154
+-->
+<PropertyList>
+  
+  <path>tnv-15.ac</path>
+  
+  <animation>
+    <object-name>bezel</object-name>
+    <object-name>base</object-name>
+    <object-name>needle</object-name>
+    
+    <object-name>vitre</object-name>
+  </animation>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Antonov-An-12/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>base</object-name>
+    <object-name>needle</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>    
+    <property>environment/temperature-degc</property>
+    <interpolation>
+      <entry><ind> -60 </ind><dep> -108 </dep></entry>
+      <entry><ind> -50 </ind><dep> -100 </dep></entry>
+      <entry><ind> -40 </ind><dep>  -93 </dep></entry>
+      <entry><ind> -30 </ind><dep>  -87 </dep></entry>
+      <entry><ind> -20 </ind><dep>  -79 </dep></entry>
+      <entry><ind> -10 </ind><dep>  -70 </dep></entry>
+      <entry><ind>   0 </ind><dep>  -60 </dep></entry>
+      <entry><ind>  10 </ind><dep>  -49 </dep></entry>
+      <entry><ind>  20 </ind><dep>  -39 </dep></entry>
+      <entry><ind>  30 </ind><dep>  -23 </dep></entry>
+      <entry><ind>  40 </ind><dep>   -5 </dep></entry>
+      <entry><ind>  50 </ind><dep>    6 </dep></entry>
+      <entry><ind>  60 </ind><dep>   20 </dep></entry>
+      <entry><ind>  70 </ind><dep>   33 </dep></entry>
+      <entry><ind>  80 </ind><dep>   43 </dep></entry>
+      <entry><ind>  90 </ind><dep>   52 </dep></entry>
+      <entry><ind> 100 </ind><dep>   62 </dep></entry>
+      <entry><ind> 110 </ind><dep>   69 </dep></entry>
+      <entry><ind> 120 </ind><dep>   77 </dep></entry>
+      <entry><ind> 130 </ind><dep>   82 </dep></entry>
+      <entry><ind> 140 </ind><dep>   91 </dep></entry>
+      <entry><ind> 150 </ind><dep>  101 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+</PropertyList>

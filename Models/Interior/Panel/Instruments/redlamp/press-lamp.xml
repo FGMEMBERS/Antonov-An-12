@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- #############################################################################
+     #    (C) 2006 by Yurik V. Nikiforoff - port for FGFS,  FDM,                 #
+     #    2d & 3d instruments, animations, systems and over.                     #
+     #    yurik@megasignal.com                                                   #
+     #                                                                           #
+     #    Updated BARANGER Emmanuel 2015                                         #
+     #############################################################################
+     Green lamp 3D instrument for Tu-154
+-->
+<PropertyList>
+  
+  <path>press_lamp.ac</path>
+  
+  <animation>
+    <object-name>base</object-name>
+    <object-name>lampGoff1</object-name>
+    <object-name>lampGoff2</object-name>
+    <object-name>lampGoff3</object-name>
+    <object-name>lampGoff4</object-name>
+    <object-name>lampRoff1</object-name>
+    <object-name>lampRoff2</object-name>
+    <object-name>lampRoff3</object-name>
+    <object-name>lampRoff4</object-name>
+    <object-name>lampGon1</object-name>
+    <object-name>lampGon2</object-name>
+    <object-name>lampGon3</object-name>
+    <object-name>lampGon4</object-name>
+    <object-name>lampRon1</object-name>
+    <object-name>lampRon2</object-name>
+    <object-name>lampRon3</object-name>
+    <object-name>lampRon4</object-name>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>lampGoff1</object-name>
+    <object-name>lampGoff2</object-name>
+    <object-name>lampGoff3</object-name>
+    <object-name>lampGoff4</object-name>
+    <object-name>lampRoff1</object-name>
+    <object-name>lampRoff2</object-name>
+    <object-name>lampRoff3</object-name>
+    <object-name>lampRoff4</object-name>
+    <emission>           
+      <red>   0.235 </red>
+      <green> 0.235 </green>
+      <blue>  0.235 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>lampGon1</object-name>
+    <object-name>lampGon2</object-name>
+    <object-name>lampGon3</object-name>
+    <object-name>lampGon4</object-name>
+    <object-name>lampRon1</object-name>
+    <object-name>lampRon2</object-name>
+    <object-name>lampRon3</object-name>
+    <object-name>lampRon4</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampGon1</object-name>
+    <condition>
+      <and>
+        <greater-than>
+          <property>/engines/engine[0]/n2</property>
+          <value> 60 </value>
+        </greater-than>
+        <greater-than>
+          <property>/controls/engines/engine[0]/throttle</property>
+          <value> 0.12 </value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampRon1</object-name>
+    <condition>
+      <less-than>
+        <property>/engines/engine[0]/n2</property>
+        <value> 60 </value>
+      </less-than>  
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampGon2</object-name>
+    <condition>
+      <and>
+        <greater-than>
+          <property>/engines/engine[1]/n2</property>
+          <value> 60 </value>
+        </greater-than>
+        <greater-than>
+          <property>/controls/engines/engine[1]/throttle</property>
+          <value> 0.12 </value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampRon2</object-name>
+    <condition>
+      <less-than>
+        <property>/engines/engine[1]/n2</property>
+        <value> 60 </value>
+      </less-than>  
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampGon3</object-name>
+    <condition>
+      <and>
+        <greater-than>
+          <property>/engines/engine[2]/n2</property>
+          <value> 60 </value>
+        </greater-than>
+        <greater-than>
+          <property>/controls/engines/engine[2]/throttle</property>
+          <value> 0.12 </value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampRon3</object-name>
+    <condition>
+      <less-than>
+        <property>/engines/engine[2]/n2</property>
+        <value> 60 </value>
+      </less-than>  
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampGon4</object-name>
+    <condition>
+      <and>
+        <greater-than>
+          <property>/engines/engine[3]/n2</property>
+          <value> 60 </value>
+        </greater-than>
+        <greater-than>
+          <property>/controls/engines/engine[3]/throttle</property>
+          <value> 0.12 </value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>lampRon4</object-name>
+    <condition>
+      <less-than>
+        <property>/engines/engine[3]/n2</property>
+        <value> 60 </value>
+      </less-than>  
+    </condition>
+  </animation>
+  
+</PropertyList>

@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- <PropertyList include="an12-jsbsim-cnf.xml"> -->
-<PropertyList include="an12-yasim-cnf.xml">
+<PropertyList include="an12-base.xml">
 
   <sim>
 
     <description>Antonov An 12 (YASim)</description>
-    <author>BARANGER Emmanuel (3D/FDM)</author>
+    <author>BARANGER Emmanuel (3D/FDM), Firefly (3D Improvment), HerbyW (Instrumentation)</author>
+    <aircraft-version>2.0</aircraft-version>
+    <status>Beta</status>
+
+    <flight-model>yasim</flight-model>
+    <aero>an12-yasim</aero>
 
     <rating>
-      <FDM type="int">     2 </FDM>
-      <systems type="int"> 1 </systems>
-      <cockpit type="int"> 1 </cockpit>
+      <FDM type="int">     3 </FDM>
+      <systems type="int"> 3 </systems>
+      <cockpit type="int"> 3 </cockpit>
       <model type="int">   4 </model>
     </rating>
 
   </sim>
 
 </PropertyList>
-

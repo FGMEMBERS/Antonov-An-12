@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- #############################################################################
+     #    (C) 2006 by Yurik V. Nikiforoff - port for FGFS,  FDM,                 #
+     #    2d & 3d instruments, animations, systems and over.                     #
+     #    yurik@megasignal.com                                                   #
+     #                                                                           #
+     #    Updated BARANGER Emmanuel 2015                                         #
+     #############################################################################   
+     Variometer 3D instrument for Tu-154 
+
+     wicota v kabine = Kabinendruckhöhe
+     perepad davlenii = Unterschied des Drucks
+-->
+<PropertyList>
+  
+  <path>uvpd.ac</path>
+  
+  <animation> 
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle1</object-name>
+    <object-name>needle2</object-name> 
+    
+    <object-name>vitre</object-name> 
+  </animation>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Antonov-An-12/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle1</object-name>
+    <object-name>needle2</object-name> 
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>needle1</object-name>
+    <property>position/altitude-ft</property>
+    <factor> 0.36 </factor>
+    <interpolation>
+      <entry><ind>  -200 </ind><dep>   5 </dep></entry>
+      <entry><ind>     0 </ind><dep>   0 </dep></entry>
+      <entry><ind>  8000 </ind><dep> -90 </dep></entry>
+      <entry><ind> 25000 </ind><dep> -90 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>needle2</object-name>
+    <property>controls/pressurization/diffdruck</property>
+    <interpolation>
+      <entry><ind> -0.04 </ind><dep> -40.0 </dep></entry>
+      <entry><ind>  0.00 </ind><dep>   0.0 </dep></entry>
+      <entry><ind>  0.48 </ind><dep>   5.4 </dep></entry>        
+      <entry><ind>  3.60 </ind><dep> 118.9 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+</PropertyList>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+    #############################################################################
+    #    (C) 2006 by Yurik V. Nikiforoff - port for FGFS,  FDM,                 #
+    #    2d & 3d instruments, animations, systems and over.                     #
+    #    yurik@megasignal.com                                                   #
+    #                                                                           #
+    #    Updated BARANGER Emmanuel 2015                                         #
+    #############################################################################   
+    indicators on central panel 3D instrument for Tu-154
+-->
+<PropertyList>
+  
+  <path>trim-neutral.ac</path>
+  
+  <animation>
+    <object-name>base</object-name>
+    <object-name>text_1</object-name>
+    <object-name>text_2</object-name>
+    <object-name>text_3</object-name>
+    <object-name>text_4</object-name>
+    <object-name>hs_1</object-name>
+    <object-name>hs_2</object-name>
+    <object-name>hs_3</object-name>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>text_1</object-name>
+    <emission>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>text_2</object-name>
+    <condition>
+      <or>
+        <less-than>
+          <property>controls/flight/rudder-trim</property>
+          <value>0</value>
+        </less-than>
+        <greater-than>
+          <property>controls/flight/rudder-trim</property>
+          <value>0</value>
+        </greater-than>
+      </or>
+    </condition>
+    <emission>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>text_3</object-name>
+    <condition>
+      <or>
+        <less-than>
+          <property>controls/flight/aileron-trim</property>
+          <value>0</value>
+        </less-than>
+        <greater-than>
+          <property>controls/flight/aileron-trim</property>
+          <value>0</value>
+        </greater-than>
+      </or>
+    </condition>
+    <emission>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>text_4</object-name>
+    <condition>
+      <or>
+        <less-than>
+          <property>controls/flight/elevator-trim</property>
+          <value>0</value>
+        </less-than>
+        <greater-than>
+          <property>controls/flight/elevator-trim</property>
+          <value>0</value>
+        </greater-than>
+      </or>
+    </condition>
+    <emission>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
+  </animation>
+  
+  <!--Check lamps procedure
+  <animation>
+    <type>material</type>
+    <object-name>text_1</object-name>
+    <object-name>text_2</object-name>
+    <object-name>text_3</object-name>
+    <object-name>text_4</object-name>
+    <condition>
+       <property>systems/electrical/checking-lamps/main-panel</property>
+    </condition>
+    <emission>
+      <factor-prop>systems/electrical/checking-lamps/main-panel</factor-prop>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+  -->
+  
+  <animation>
+    <type>pick</type>
+    <object-name>hs_1</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/flight/rudder-trim</property>
+        <value>0</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>hs_2</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/flight/aileron-trim</property>
+        <value>0</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>hs_3</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/flight/elevator-trim</property>
+        <value>0</value>
+      </binding>    
+    </action>
+  </animation>
+  
+</PropertyList>

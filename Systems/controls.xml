@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <autostart type="int">0</autostart>
+  
+  <lighting>
+    <nav-lights type="int">0</nav-lights>    
+    <landing-lights type="int">0</landing-lights>
+    <taxi-lights type="int">0</taxi-lights>
+  </lighting>
+  
+  <paratroopers>
+    <paratroopers type="int">0</paratroopers>
+    <weight type="float">0</weight>      
+  </paratroopers>
+  
+  <storage>
+    <storage type="int">0</storage>
+    <weight type="float">6000</weight>
+    <nosmoke type="string">nosmoke</nosmoke>
+  </storage>
+  
+  <switches>
+    <fuel type="float">0</fuel>
+    <gauge-light type="int">0</gauge-light>
+    <adf-1-selector type="double">0</adf-1-selector>
+    <adf-2-selector type="double">0</adf-2-selector>
+    <ushdb-sel-1 type="double">0</ushdb-sel-1>
+    <ushdb-sel-2 type="double">0</ushdb-sel-2>
+  </switches>
+  
+  <chokes>
+    <activ type="int">0</activ>
+  </chokes>
+  <reverser type="bool">0</reverser>
+  
+  <engines>
+    <engine n="0">
+      <boost type="double">0</boost>
+      <magnetos>0</magnetos>
+      <condition>0</condition>
+    </engine>
+    <engine n="1">
+      <boost type="double">0</boost>
+      <magnetos>0</magnetos>
+      <condition>0</condition>
+    </engine>
+    <engine n="2">
+      <boost type="double">0</boost>
+      <magnetos>0</magnetos>
+      <condition>0</condition>
+    </engine>
+    <engine n="3">
+      <boost type="double">0</boost>
+      <magnetos>0</magnetos>
+      <condition>0</condition>
+    </engine>
+  </engines>
+  
+  <gear>
+    <brake-parking type="double">1</brake-parking>
+  </gear>
+  
+</PropertyList>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+    #############################################################################
+    #    (C) 2008 by Yurik V. Nikiforoff - port for FGFS,  FDM,                 #
+    #    2d & 3d instruments, animations, systems and over.                     #
+    #    yurik@megasignal.com                                                   #
+    #                                                                           #
+    #    Updated BARANGER Emmanuel 2015                                         #
+    #############################################################################   
+    Light switches block -AN-12 3D instrument for Tu-154
+-->
+<PropertyList>
+  
+  <path>bano.ac</path>
+  
+  <animation>
+    <object-name>base</object-name>
+    <object-name>handle_1</object-name>
+    <object-name>handle_2</object-name>
+    <object-name>handle_3</object-name>
+    <object-name>hotspot_1</object-name>
+    <object-name>hotspot_2</object-name>
+    <object-name>hotspot_3</object-name>
+    <object-name>hotspot_4</object-name>
+    <object-name>hotspot_5</object-name>
+    <object-name>hotspot_6</object-name>
+  </animation>
+  
+  <!--External panel lighting-->
+  <animation>
+    <type>material</type>
+    <object-name>handle_1</object-name>
+    <object-name>handle_2</object-name>
+    <object-name>handle_3</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <offset> 0.1 </offset>
+      <red>   0.11 </red>
+      <green> 0.11 </green>
+      <blue>  0.11 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>handle_1</object-name>
+    <property>sim/multiplay/generic/float[1]</property>  
+    <interpolation>
+      <entry><ind> 0 </ind><dep> -60 </dep></entry>
+      <entry><ind> 1 </ind><dep>  60 </dep></entry>
+    </interpolation>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>handle_2</object-name>
+    <property>controls/paratroopers/jump-signal-pos</property> 
+    <interpolation>
+      <entry><ind> 0 </ind><dep> -60 </dep></entry>
+      <entry><ind> 1 </ind><dep>  60 </dep></entry>
+    </interpolation>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>handle_3</object-name>
+    <property>controls/ALS/setting-pos</property>  
+    <interpolation>
+      <entry><ind> 0 </ind><dep> -60 </dep></entry>
+      <entry><ind> 1 </ind><dep>  60 </dep></entry>
+    </interpolation>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <!--Control-->
+  <animation>
+    <type>pick</type>
+    <object-name>hotspot_1</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          interpolate("sim/multiplay/generic/float[1]", 1.0, 2.0 );
+        </script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>hotspot_2</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          interpolate("sim/multiplay/generic/float[1]", 0.0, 2.0 );
+        </script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>hotspot_3</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/paratroopers/jump-signal</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>hotspot_4</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/paratroopers/jump-signal</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>hotspot_5</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>     
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/ALS/setting</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>hotspot_6</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>     
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/ALS/setting</property>
+      </binding>
+    </action>
+  </animation>
+  
+</PropertyList>

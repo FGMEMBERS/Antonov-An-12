@@ -13,17 +13,17 @@
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var baie = self.getNode("sim/model/door-positions/baie/position-norm", 1);
+      
       crew_door.alias(float_0);
-      passenger_door.alias(float_1);
+      baie_door.alias(float_1);
     </load>
 
     <unload>
       livery_update.stop();
       crew_door.unalias();
-      passenger_door.unalias();
+      baie_door.unalias();
     </unload>
   </nasal>
 
@@ -76,7 +76,8 @@
     <object-name>heliceGI</object-name>
     <object-name>heliceDI</object-name>
     <object-name>heliceDE</object-name>
-
+    <object-name>cables</object-name>
+    
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
     <object-name>vitreporte</object-name>
@@ -84,11 +85,10 @@
     <object-name>propdiscGE</object-name>
     <object-name>propblurGI</object-name>
     <object-name>propdiscGI</object-name>
-    <object-name>propblurGI</object-name>
-    <object-name>propdiscGI</object-name>
-    <object-name>propblurGE</object-name>
-    <object-name>propdiscGE</object-name>
-    <object-name>cables</object-name>
+    <object-name>propblurDI</object-name>
+    <object-name>propdiscDI</object-name>
+    <object-name>propblurDE</object-name>
+    <object-name>propdiscDE</object-name>
   </animation>
 
   <animation>
@@ -149,18 +149,10 @@
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
   </animation>
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
-    <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
-    </condition>
     <object-name>fuselage</object-name>
     <object-name>porte</object-name>
     <object-name>baie</object-name>
@@ -191,104 +183,132 @@
     <object-name>antennes</object-name>
     <object-name>cables</object-name>
   </effect>
-
-  <effect>
-    <inherits-from>Effects/model-combined-deferred</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
-    <object-name>fuselage</object-name>
-    <object-name>porte</object-name>
-    <object-name>baie</object-name>
-    <object-name>baieG</object-name>
-    <object-name>baieD</object-name>
-    <object-name>bosses</object-name>
-    <object-name>porteA</object-name>
-    <object-name>porteAG</object-name>
-    <object-name>porteAD</object-name>
-    <object-name>porteG1</object-name>
-    <object-name>porteG2</object-name>
-    <object-name>porteD1</object-name>
-    <object-name>porteD2</object-name>
-    <object-name>ailes</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>aileronD</object-name>
-    <object-name>voletG</object-name>
-    <object-name>voletD</object-name>
-    <object-name>ailes2</object-name>
-    <object-name>direction</object-name>
-    <object-name>profondeur</object-name>
-    <object-name>moteurs</object-name>
-    <object-name>bolGE</object-name>
-    <object-name>bolGI</object-name>
-    <object-name>bolDI</object-name>
-    <object-name>bolDE</object-name>
-    <object-name>tourelle</object-name>
-    <object-name>antennes</object-name>
-    <object-name>cables</object-name>
-  </effect>
-  
-  <animation>
-    <type>noshadow</type>
-    <object-name>vitres</object-name>
-    <object-name>vitreporte</object-name>
-    <object-name>bosses</object-name>
-    <object-name>propblurGE</object-name>
-    <object-name>propdiscGE</object-name>
-    <object-name>propblurGI</object-name>
-    <object-name>propdiscGI</object-name>
-    <object-name>propblurGI</object-name>
-    <object-name>propdiscGI</object-name>
-    <object-name>propblurGE</object-name>
-    <object-name>propdiscGE</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitres</object-name>
-    <object-name>vitreporte</object-name>
-  </animation>
 
   <!-- working for Rembrandt -->
   <effect>
+    <inherits-from>Aircraft/Antonov-An-12/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitres</object-name>
+    <object-name>vitreporte</object-name>
+  </effect>
+  
+  <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
     <object-name>vitres</object-name>
     <object-name>vitreporte</object-name>
     <object-name>propblurGE</object-name>
     <object-name>propdiscGE</object-name>
     <object-name>propblurGI</object-name>
     <object-name>propdiscGI</object-name>
-    <object-name>propblurGI</object-name>
-    <object-name>propdiscGI</object-name>
-    <object-name>propblurGE</object-name>
-    <object-name>propdiscGE</object-name>
+    <object-name>propblurDI</object-name>
+    <object-name>propdiscDI</object-name>
+    <object-name>propblurDE</object-name>
+    <object-name>propdiscDE</object-name>
   </effect>
   
-  <!-- A shadow for OSG without Rembrandt
+  <!-- A shadow for OSG without Rembrandt -->
   <model>
     <path>Aircraft/Antonov-An-12/Models/shadow.xml</path>
     <offsets>
-      <x-m>  0.000 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -3.000 </z-m>
+      <x-m>  0.0 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -4.8 </z-m>
     </offsets>
-  </model> -->
+  </model>
 
   <!-- Interior -->
   <model>
-    <name>Interieur</name>
     <path>Aircraft/Antonov-An-12/Models/Interior/interior.xml</path>
   </model>
 
-  <!-- For Rembrandt -->
+  <!-- stairs for the crew door-->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Stairs/stairs.xml</path>
+    <offsets>
+      <x-m> -4.75 </x-m>
+      <y-m> -2.05 </y-m>
+      <z-m> -5.00 </z-m>
+      <heading-deg> 90 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Wipers  
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Wipers/wiper.xml</path>
+    <offsets>
+      <x-m> -14.37033 </x-m>
+      <y-m>  -0.39044 </y-m>
+      <z-m>  -1.83490 </z-m>
+    </offsets>
+  </model>
+  -->
+  
+  <!-- Chokes -->
+  <model>
+    <name>choke_nose</name>
+    <path>Aircraft/Antonov-An-12/Models/Effects/ground/chokes.xml</path>
+    <condition>
+      <equals>
+        <property>sim/multiplay/generic/int[3]</property>
+        <value>1</value>
+      </equals>
+    </condition>
+    <offsets>
+      <x-m> -6.3728 </x-m>
+      <y-m>  0.0000 </y-m>
+      <z-m> -5.0550 </z-m>
+    </offsets>
+  </model>
+<!--  
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Effects/parachut/paratroopers-smoke.xml</path>
+    <offsets>
+      <x-m> 12 </x-m>
+      <y-m>  0 </y-m>
+      <z-m> -5 </z-m>
+    </offsets>
+  </model>
+-->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Effects/Submodels/Storage/all-storage.xml</path>
+  </model>
+  
+  <!-- All cranking -->
+  <model>
+    <path>Aircraft/Antonov-An-12/Models/Effects/cranking/all-cranking.xml</path>
+  </model>
+  
+  <text>
+    <name>Callsign</name>
+    <offsets>
+      <x-m> -0.71 </x-m>
+      <y-m> -2.29 </y-m>
+      <z-m> -3.51 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+    <alignment>center-center</alignment>
+    <axis-alignment>xz-plane</axis-alignment>
+    <type type="string">text-value</type>
+    <property type="string">sim/multiplay/generic/string[0]</property>
+    <format type="string">%.7s</format>
+    <font>arial_black.txf</font>
+    <character-size>0.08</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <font-resolution>
+      <width type="int">128</width>
+      <height type="int">128</height>
+    </font-resolution>
+  </text>
+  
   <animation>
-    <type>noshadow</type>
-    <object-name>Interieur</object-name>
+    <type>material</type>
+    <object-name>Callsign</object-name>         
+    <emission>
+      <red>   0.15 </red>
+      <green> 0.15 </green>
+      <blue>  0.30 </blue>
+    </emission>        
   </animation>
   
   <!-- OSG particles -->
@@ -1194,9 +1214,9 @@
     <object-name>LaPorteduCote</object-name>
     <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
-      <entry><ind> 0.0 </ind><dep>  0.0 </dep></entry>
-      <entry><ind> 0.2 </ind><dep> -0.2 </dep></entry>
-      <entry><ind> 1.0 </ind><dep> -0.2 </dep></entry>
+      <entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 0.2 </ind><dep> -0.28 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> -0.28 </dep></entry>
     </interpolation>
     <axis>
       <x>  0 </x>

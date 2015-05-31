@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Wiper by Firefly -->
+<PropertyList>
+  
+  <path>wiper.ac</path>
+  
+  <animation>
+    <object-name>LHwiper</object-name>
+    <object-name>LHwiper.arm</object-name>
+    <object-name>LHwiper.blade</object-name>    
+    
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>LHwiper</object-name>
+    <object-name>LHwiper.blade</object-name>
+    <property>controls/wiperl/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> -100 </dep></entry>
+      <entry><ind> 1 </ind><dep>  -25 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -0.688 </x>
+      <y> -0.235 </y>
+      <z>  0.687 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>LHwiper.arm</object-name>
+    <property>controls/wiperl/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> -100 </dep></entry>
+      <entry><ind> 1 </ind><dep>  -25 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -0.688 </x>
+      <y> -0.235 </y>
+      <z>  0.687 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>LHwiper.blade</object-name>
+    <property>controls/wiperl/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 45 </dep></entry>
+      <entry><ind> 1 </ind><dep> 25 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.24049 </x-m>
+      <y-m> 0.29962 </y-m>
+      <z-m> 0.27727 </z-m>
+    </center>
+    <axis>
+      <x> -0.688 </x>
+      <y> -0.235 </y>
+      <z>  0.687 </z>
+    </axis>
+  </animation>
+  
+</PropertyList>
