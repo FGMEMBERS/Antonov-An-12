@@ -603,7 +603,7 @@
         <value> 20 </value>
       </greater-than>
     </condition>
-    <property>/engines/engine[2]/rpm</property>
+    <property>engines/engine[2]/rpm</property>
     <factor> 1 </factor>
     <center>
       <x-m> -6.76873 </x-m>
